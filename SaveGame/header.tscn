@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://drekv3minpqku"]
+
+[ext_resource type="Script" path="res://header.gd" id="1_vh23t"]
+
+[node name="Header" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 88.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_vh23t")
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 16.0
+offset_right = 202.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 30
+text = "Level:"
+
+[node name="NumLevel" type="Label" parent="Level"]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 136.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 17.0
+offset_right = 794.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 30
+text = "Coins:"
+
+[node name="NumCoins" type="Label" parent="Coins"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -1.0
+offset_right = 152.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1065.0
+offset_bottom = 70.0
+text = "Guardar
+Juego"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

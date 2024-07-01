@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv1mtlyf78h45"]
+
+[ext_resource type="PackedScene" uid="uid://dcvqm2ugyp6vl" path="res://ball.tscn" id="1_hgbq7"]
+[ext_resource type="PackedScene" uid="uid://cpccmvpgyip65" path="res://player.tscn" id="2_gu8ug"]
+[ext_resource type="Script" path="res://ball.gd" id="3_5mpd0"]
+[ext_resource type="PackedScene" uid="uid://bsa8wyhom7ttd" path="res://environment.tscn" id="3_qk8eg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6pnj"]
+friction = 0.0
+bounce = 1.0
+
+[node name="World" type="Node2D"]
+
+[node name="Environment" parent="." instance=ExtResource("3_qk8eg")]
+
+[node name="Ball" parent="." instance=ExtResource("1_hgbq7")]
+position = Vector2(144, 450)
+physics_material_override = SubResource("PhysicsMaterial_t6pnj")
+gravity_scale = 0.0
+script = ExtResource("3_5mpd0")
+
+[node name="Player" parent="." instance=ExtResource("2_gu8ug")]
+position = Vector2(144, 470)

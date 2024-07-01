@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brh1j6prspc4o"]
+
+[ext_resource type="PackedScene" uid="uid://cpvx37ovh76fa" path="res://botones.tscn" id="1_fidnw"]
+
+[node name="BotonSalir" instance=ExtResource("1_fidnw")]
+
+[node name="Label" parent="Boton" index="0"]
+text = "Salir"

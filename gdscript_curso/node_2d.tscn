@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://enqt8w1yy8kr"]
+
+[ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_0570e"]
+[ext_resource type="Texture2D" uid="uid://d2u8iuqecdlxr" path="res://icon.svg" id="2_g4a4c"]
+[ext_resource type="PackedScene" uid="uid://clnk8v0pc184u" path="res://personaje.tscn" id="2_peqvw"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(103, 93)
+script = ExtResource("1_0570e")
+
+[node name="Personaje" parent="." instance=ExtResource("2_peqvw")]
+position = Vector2(89, 28)
+
+[node name="Personaje2" parent="." instance=ExtResource("2_peqvw")]
+position = Vector2(387, 270)
+
+[node name="Personaje3" type="Node2D" parent="."]
+position = Vector2(565, -12)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Personaje3"]
+texture = ExtResource("2_g4a4c")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Personaje3"]
+
+[node name="Personaje4" parent="." instance=ExtResource("2_peqvw")]
+position = Vector2(762, 204)

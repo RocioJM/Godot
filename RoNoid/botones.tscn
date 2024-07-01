@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpvx37ovh76fa"]
+
+[ext_resource type="Texture2D" uid="uid://dfotoaco0yqwg" path="res://assets/Blue Button 1.png" id="1_gjad2"]
+[ext_resource type="Texture2D" uid="uid://dxtvvcphi17sa" path="res://assets/Blue Button 2.png" id="2_8gece"]
+[ext_resource type="Texture2D" uid="uid://f30h075ygv7" path="res://assets/Blue-focus.png" id="3_k3rfc"]
+[ext_resource type="FontFile" uid="uid://bmg26j5rfiiej" path="res://assets/advanced_pixel-7.ttf" id="4_p1vms"]
+
+[node name="Botones" type="Node2D"]
+
+[node name="Boton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("1_gjad2")
+texture_pressed = ExtResource("2_8gece")
+texture_hover = ExtResource("3_k3rfc")
+texture_focused = ExtResource("3_k3rfc")
+
+[node name="Label" type="Label" parent="Boton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p1vms")
+theme_override_font_sizes/font_size = 20
+text = "sdfsd"
+horizontal_alignment = 1
+vertical_alignment = 1

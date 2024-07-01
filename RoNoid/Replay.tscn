@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://chunmakxrl1ek"]
+
+[ext_resource type="Script" path="res://Replay.gd" id="1_uc441"]
+[ext_resource type="PackedScene" uid="uid://cuy0tyn8xvtl2" path="res://main_title.tscn" id="2_um24o"]
+[ext_resource type="PackedScene" uid="uid://brh1j6prspc4o" path="res://botonSalir.tscn" id="4_3qako"]
+[ext_resource type="PackedScene" uid="uid://dkx2xajehkgmq" path="res://botonReplay.tscn" id="4_guhty"]
+
+[node name="Replay" type="Node2D"]
+script = ExtResource("1_uc441")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 288.0
+offset_bottom = 512.0
+color = Color(0.00784314, 0, 0.25098, 0.517647)
+
+[node name="Menu" type="VBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 242.0
+offset_bottom = 384.0
+
+[node name="main_title" parent="Menu" instance=ExtResource("2_um24o")]
+
+[node name="BotonSalir" parent="Menu" instance=ExtResource("4_3qako")]
+position = Vector2(64, 208)
+
+[node name="BotonReplay" parent="Menu" instance=ExtResource("4_guhty")]
+process_mode = 3
+position = Vector2(64, 112)
+
+[connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salir_boton_pressed"]
+[connection signal="pressed" from="Menu/BotonReplay/Boton" to="." method="_on_Replay_boton_pressed"]
+
+[editable path="Menu/BotonSalir"]
+[editable path="Menu/BotonReplay"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmb21erwnxq77"]
+
+[ext_resource type="PackedScene" uid="uid://r7ch3axu3yp6" path="res://player.tscn" id="1_dw86c"]
+[ext_resource type="PackedScene" uid="uid://drekv3minpqku" path="res://header.tscn" id="2_nru6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytp2d"]
+size = Vector2(1169, 24)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_dw86c")]
+position = Vector2(128, 176)
+
+[node name="Header" parent="." instance=ExtResource("2_nru6c")]
+
+[node name="Suelo" type="StaticBody2D" parent="."]
+position = Vector2(0, -22)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Suelo"]
+offset_left = -8.0
+offset_top = 648.0
+offset_right = 1160.0
+offset_bottom = 672.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(575.5, 660)
+shape = SubResource("RectangleShape2D_ytp2d")

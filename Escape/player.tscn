@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqfw5ly005jq6"]
+
+[ext_resource type="Texture2D" uid="uid://c8iatxox4jo1y" path="res://assets/art/playerGrey_up1.png" id="1_etqm1"]
+[ext_resource type="Texture2D" uid="uid://bvoarj6qf4d35" path="res://assets/art/playerGrey_up2.png" id="2_tb1m2"]
+[ext_resource type="Texture2D" uid="uid://dsi3ynp8vyquq" path="res://assets/art/playerGrey_walk1.png" id="3_dfxro"]
+[ext_resource type="Texture2D" uid="uid://dioag6yxo2yyk" path="res://assets/art/playerGrey_walk2.png" id="4_whx1c"]
+
+[sub_resource type="GDScript" id="GDScript_q8asl"]
+script/source = "extends Area2D
+
+@export var speed = 400 # How fast the player will move (pixels/sec).
+var screen_size # Size of the game window.
+
+signal hit
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	screen_size = get_viewport_rect().size
+	#hide()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var velocity = Vector2.ZERO # The player's movement vector.
+	if Input.is_action_pressed(\"mov_derecha\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"mov_izquierda\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"mov_abajo\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"mov_arriba\"):
+		velocity.y -= 1
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+	
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	if velocity.x != 0:
+		$AnimatedSprite2D.animation = \"walk\"
+		$AnimatedSprite2D.flip_v = false
+		# See the note below about boolean assignment.
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$AnimatedSprite2D.animation = \"up\"
+		$AnimatedSprite2D.flip_v = velocity.y > 0
+	
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
+
+
+func _on_body_entered(body):
+	hide() # Player disappears after being hit.
+	hit.emit()
+	# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred(\"disabled\", true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrch1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_etqm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tb1m2")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dfxro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_whx1c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ayna"]
+radius = 26.0
+height = 68.0
+
+[node name="Player" type="Area2D"]
+script = SubResource("GDScript_q8asl")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wrch1")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0ayna")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

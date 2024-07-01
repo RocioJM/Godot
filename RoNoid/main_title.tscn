@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuy0tyn8xvtl2"]
+
+[ext_resource type="Texture2D" uid="uid://crddmxktrtn8j" path="res://assets/pelota.png" id="1_102l3"]
+[ext_resource type="FontFile" uid="uid://bmg26j5rfiiej" path="res://assets/advanced_pixel-7.ttf" id="2_1c2t3"]
+
+[node name="Main_Title" type="Node2D"]
+position = Vector2(20, 0)
+metadata/_edit_group_ = true
+
+[node name="Logo" type="TextureRect" parent="."]
+offset_right = 626.0
+offset_bottom = 626.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_102l3")
+
+[node name="RoNoid" type="Label" parent="."]
+offset_left = 64.0
+offset_top = -5.0
+offset_right = 159.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1c2t3")
+theme_override_font_sizes/font_size = 50
+text = "RoNoid"
+
+[node name="by" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 37.0
+offset_right = 179.0
+offset_bottom = 88.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_1c2t3")
+theme_override_font_sizes/font_size = 20
+text = "by RocioJM"

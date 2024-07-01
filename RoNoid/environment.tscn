@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsa8wyhom7ttd"]
+
+[ext_resource type="Texture2D" uid="uid://dcrqx47oj0c2p" path="res://assets/background.png" id="1_5sscw"]
+[ext_resource type="PackedScene" uid="uid://bxhlndlksc4ad" path="res://borders.tscn" id="2_nbbfh"]
+
+[node name="Environment" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5sscw")
+
+[node name="Borders" parent="." instance=ExtResource("2_nbbfh")]

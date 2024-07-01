@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcvqm2ugyp6vl"]
+
+[ext_resource type="Texture2D" uid="uid://dhlknnxujr8mt" path="res://assets/bola2-b.png" id="1_5ygvt"]
+[ext_resource type="Script" path="res://ball.gd" id="1_dnl8y"]
+[ext_resource type="AudioStream" uid="uid://dc17krtyx6g3d" path="res://assets/sounds/break.ogg" id="2_pchxc"]
+[ext_resource type="AudioStream" uid="uid://qutiqs06uol2" path="res://assets/sounds/hit.wav" id="3_204xy"]
+[ext_resource type="AudioStream" uid="uid://bjunhe2lu2bsc" path="res://assets/sounds/lose.ogg" id="4_ngkl3"]
+[ext_resource type="AudioStream" uid="uid://di7oa566qhl18" path="res://assets/sounds/start.wav" id="5_lolgr"]
+[ext_resource type="AudioStream" uid="uid://d4ikx1j6nchxu" path="res://assets/sounds/you_win.ogg" id="6_43g8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btks7"]
+radius = 8.0
+
+[node name="Ball" type="RigidBody2D"]
+linear_damp_mode = 1
+script = ExtResource("1_dnl8y")
+metadata/_edit_group_ = true
+
+[node name="col_ball" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_btks7")
+
+[node name="spr_ball" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ygvt")
+
+[node name="Break" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pchxc")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_204xy")
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ngkl3")
+
+[node name="Start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lolgr")
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_43g8g")
