@@ -19,6 +19,7 @@ offset_left = 32.0
 offset_top = 128.0
 offset_right = 242.0
 offset_bottom = 384.0
+size_flags_horizontal = 4
 
 [node name="main_title" parent="Menu" instance=ExtResource("2_ebaxl")]
 

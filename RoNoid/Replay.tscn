@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://chunmakxrl1ek"]
+[gd_scene load_steps=9 format=3 uid="uid://chunmakxrl1ek"]
 
 [ext_resource type="Script" path="res://Replay.gd" id="1_uc441"]
+[ext_resource type="Texture2D" uid="uid://dfotoaco0yqwg" path="res://assets/Blue Button 1.png" id="2_4vwlo"]
 [ext_resource type="PackedScene" uid="uid://cuy0tyn8xvtl2" path="res://main_title.tscn" id="2_um24o"]
+[ext_resource type="Texture2D" uid="uid://dxtvvcphi17sa" path="res://assets/Blue Button 2.png" id="3_ga0c0"]
 [ext_resource type="PackedScene" uid="uid://brh1j6prspc4o" path="res://botonSalir.tscn" id="4_3qako"]
 [ext_resource type="PackedScene" uid="uid://dkx2xajehkgmq" path="res://botonReplay.tscn" id="4_guhty"]
+[ext_resource type="Texture2D" uid="uid://f30h075ygv7" path="res://assets/Blue-focus.png" id="4_q2cmr"]
+[ext_resource type="FontFile" uid="uid://bmg26j5rfiiej" path="res://assets/advanced_pixel-7.ttf" id="5_3pe8e"]
 
 [node name="Replay" type="Node2D"]
 script = ExtResource("1_uc441")
@@ -13,21 +17,50 @@ offset_right = 288.0
 offset_bottom = 512.0
 color = Color(0.00784314, 0, 0.25098, 0.517647)
 
+[node name="BotonGuardar" type="TextureButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 209.0
+offset_right = 161.0
+offset_bottom = 273.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("2_4vwlo")
+texture_pressed = ExtResource("3_ga0c0")
+texture_hover = ExtResource("4_q2cmr")
+texture_focused = ExtResource("4_q2cmr")
+metadata/_edit_group_ = true
+
+[node name="Guardar" type="Label" parent="ColorRect/BotonGuardar"]
+layout_mode = 0
+offset_left = 7.25
+offset_top = 15.5
+offset_right = 57.25
+offset_bottom = 44.5
+theme_override_fonts/font = ExtResource("5_3pe8e")
+theme_override_font_sizes/font_size = 20
+text = "Guardar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Menu" type="VBoxContainer" parent="."]
 offset_left = 32.0
-offset_top = 128.0
+offset_top = 129.0
 offset_right = 242.0
-offset_bottom = 384.0
+offset_bottom = 385.0
 
 [node name="main_title" parent="Menu" instance=ExtResource("2_um24o")]
 
 [node name="BotonSalir" parent="Menu" instance=ExtResource("4_3qako")]
-position = Vector2(64, 208)
+position = Vector2(64, 269)
+
+[node name="Boton" parent="Menu/BotonSalir" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="BotonReplay" parent="Menu" instance=ExtResource("4_guhty")]
 process_mode = 3
-position = Vector2(64, 112)
+position = Vector2(64, 173)
 
+[connection signal="pressed" from="ColorRect/BotonGuardar" to="." method="_on_boton_guardar_pressed"]
 [connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salir_boton_pressed"]
 [connection signal="pressed" from="Menu/BotonReplay/Boton" to="." method="_on_Replay_boton_pressed"]
 

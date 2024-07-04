@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhcc5h1hmrdaq"]
+
+[ext_resource type="Script" path="res://Win.gd" id="1_rfmqq"]
+[ext_resource type="FontFile" uid="uid://bmg26j5rfiiej" path="res://assets/advanced_pixel-7.ttf" id="2_3uau4"]
+[ext_resource type="PackedScene" uid="uid://cuy0tyn8xvtl2" path="res://main_title.tscn" id="2_ey2xi"]
+[ext_resource type="Texture2D" uid="uid://dfotoaco0yqwg" path="res://assets/Blue Button 1.png" id="3_br72l"]
+[ext_resource type="PackedScene" uid="uid://brh1j6prspc4o" path="res://botonSalir.tscn" id="3_wtsh1"]
+[ext_resource type="PackedScene" uid="uid://dkx2xajehkgmq" path="res://botonReplay.tscn" id="4_0xym8"]
+[ext_resource type="Texture2D" uid="uid://dxtvvcphi17sa" path="res://assets/Blue Button 2.png" id="4_llpkd"]
+[ext_resource type="Texture2D" uid="uid://f30h075ygv7" path="res://assets/Blue-focus.png" id="5_0xg4m"]
+
+[node name="Win" type="Node2D"]
+script = ExtResource("1_rfmqq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 288.0
+offset_bottom = 512.0
+color = Color(0.00784314, 0, 0.25098, 0.517647)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 148.0
+offset_right = 283.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 25
+text = "
+Tu subistes al nivel:
+
+Has obtenido la siguiente puntucion:
+"
+horizontal_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Menu" type="VBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 242.0
+offset_bottom = 448.0
+
+[node name="main_title" parent="Menu" instance=ExtResource("2_ey2xi")]
+
+[node name="BotonSalir" parent="Menu" instance=ExtResource("3_wtsh1")]
+position = Vector2(64, 304)
+
+[node name="Boton" parent="Menu/BotonSalir" index="0"]
+offset_top = 34.0
+offset_right = 64.0
+offset_bottom = 98.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" parent="Menu/BotonSalir/Boton" index="0"]
+theme_override_font_sizes/font_size = 17
+metadata/_edit_use_anchors_ = true
+
+[node name="BotonContinuar" parent="Menu" instance=ExtResource("4_0xym8")]
+process_mode = 3
+position = Vector2(64, 208)
+
+[node name="Boton" parent="Menu/BotonContinuar" index="0"]
+offset_top = -12.0
+offset_right = 64.0
+offset_bottom = 52.0
+
+[node name="Label" parent="Menu/BotonContinuar/Boton" index="0"]
+theme_override_font_sizes/font_size = 17
+text = "Continuar"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 136.0
+offset_right = 233.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 40
+text = "FELICIDADES!!"
+horizontal_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="NumLevel" type="Label" parent="."]
+offset_top = 206.0
+offset_right = 288.0
+offset_bottom = 237.0
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="NumScore" type="Label" parent="."]
+offset_top = 262.0
+offset_right = 288.0
+offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="BotonGuardar" type="TextureButton" parent="."]
+offset_left = 97.0
+offset_top = 339.0
+offset_right = 161.0
+offset_bottom = 403.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_br72l")
+texture_pressed = ExtResource("4_llpkd")
+texture_hover = ExtResource("5_0xg4m")
+texture_focused = ExtResource("5_0xg4m")
+metadata/_edit_group_ = true
+
+[node name="Guardar" type="Label" parent="BotonGuardar"]
+layout_mode = 0
+offset_left = 7.25
+offset_top = 15.5
+offset_right = 57.25
+offset_bottom = 44.5
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 20
+text = "Guardar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salir_boton_pressed"]
+[connection signal="pressed" from="Menu/BotonContinuar/Boton" to="." method="_on_Continuar_boton_pressed"]
+[connection signal="pressed" from="BotonGuardar" to="." method="_on_boton_guardar_pressed"]
+
+[editable path="Menu/BotonSalir"]
+[editable path="Menu/BotonContinuar"]

@@ -6,21 +6,23 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	NumScore.set_text(str(ball.score))
+	NumLevel.set_text(str(ball.level))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+
 func _on_Salir_boton_pressed():
 	#get_tree().paused = false
 	get_tree().quit()
-
+	
 func _on_Continuar_boton_pressed():
 	#get_tree().paused = false
 	get_tree().change_scene_to_file("res://world.tscn")
 
 func _on_boton_guardar_pressed():
 	#FileUtils.save_game(NumLevel, NumScore, ball)
-	FileUtils.save_game(str(NumLevel.get_text()), str(NumScore.get_text()))
+	FileUtils.save_game(str(NumLevel.get_text()),str(NumScore.get_text()))
