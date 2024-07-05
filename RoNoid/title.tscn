@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qycbquyj8tv" path="res://botonStart.tscn" id="3_yqhg1"]
 [ext_resource type="PackedScene" uid="uid://brh1j6prspc4o" path="res://botonSalir.tscn" id="4_e2l4l"]
 
-[node name="Title" type="Node2D"]
+[node name="Title" type="Node2D" groups=["Title"]]
 script = ExtResource("1_h8wsr")
 
 [node name="Background" type="TextureRect" parent="."]

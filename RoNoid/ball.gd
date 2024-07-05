@@ -6,17 +6,8 @@ var game_started : bool = false
 @onready var hit_snd : AudioStreamPlayer2D = get_node("Hit")
 @onready var start_snd : AudioStreamPlayer2D = get_node("Start")
 @onready var win_snd : AudioStreamPlayer2D = get_node("Win")
-var level : int = 0
-var score : int = 0
-
-func cargar_estado() :
-	var load_data : Dictionary = FileUtils.load_game()
-	if !load_data:
-		return
-	level = int(load_data.level)
-	score = int(load_data.coins)
-	#position = Vector2(load_data.positionX, load_data.positionY)
-
+#@onready var title : Node2D = get_tree().get_first_node_in_group("Title")
+@onready var title : Node = get_tree().root.get_node("FileUtils")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,13 +15,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	linear_velocity = Vector2(50,-200)
 	for body in get_colliding_bodies():
 		if body.is_in_group("gr_blocks"):
 			body.queue_free()
 			break_snd.play()
-			if body.get_parent().get_child_count() == 15 : #gana 1
-				level += 1
+			if body.get_parent().get_child_count() == 1 : #gana 1
+				title.level += 1
+				title.score +=10
 				win_snd.play()
 				queue_free()
 				var win_scene = load("res://Win.tscn")
@@ -43,12 +34,11 @@ func _physics_process(delta):
 			get_parent().add_child(replay_scene.instantiate())
 		else:
 			hit_snd.play()
-			score +=10
+			title.score +=10
 			
 func _input(event):
 	if event.is_action_pressed("iniciar") and game_started:
 		linear_velocity = Vector2(50,-200)
 		game_started = false
 		start_snd.play()
-		cargar_estado()
 

@@ -60,6 +60,7 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="BotonGuardar" type="TextureButton" parent="."]
+visible = false
 offset_left = 227.0
 offset_top = -6.0
 offset_right = 291.0

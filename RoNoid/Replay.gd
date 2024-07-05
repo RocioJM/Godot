@@ -22,5 +22,4 @@ func _on_Continuar_boton_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
 func _on_boton_guardar_pressed():
-	#FileUtils.save_game(NumLevel, NumScore, ball)
 	FileUtils.save_game(str(NumLevel.get_text()), str(NumScore.get_text()))

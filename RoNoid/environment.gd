@@ -3,6 +3,7 @@ extends Node2D
 @onready var ball : RigidBody2D = get_tree().get_first_node_in_group("ball")
 @onready var NumScore : Label = $Score/NumScore
 @onready var NumLevel : Label = $Level/NumLevel
+@onready var title : Node = get_tree().root.get_node("FileUtils")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,12 +12,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(ball != null) : 
-		NumScore.set_text(str(ball.score))
-		NumLevel.set_text(str(ball.level))
+	if(title != null) : 
+		NumScore.set_text(str(title.score))
+		NumLevel.set_text(str(title.level))
 
 
-func _on_boton_guardar_pressed():
-	#FileUtils.save_game(NumLevel, NumScore, ball)
-	FileUtils.save_game(str(NumLevel.get_text()), str(NumScore.get_text()))
-
+#func _on_boton_guardar_pressed():
+	#FileUtils.save_game(str(NumLevel.get_text()), str(NumScore.get_text()))
+#
