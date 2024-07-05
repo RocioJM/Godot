@@ -32,9 +32,12 @@ func _physics_process(delta):
 			queue_free()
 			var replay_scene = load("res://Replay.tscn")
 			get_parent().add_child(replay_scene.instantiate())
+		elif body.name == "Player":
+			title.score +=10
+			linear_velocity = Vector2(50,-200)
 		else:
 			hit_snd.play()
-			title.score +=10
+			
 			
 func _input(event):
 	if event.is_action_pressed("iniciar") and game_started:
