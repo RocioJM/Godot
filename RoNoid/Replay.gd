@@ -17,7 +17,7 @@ func _on_Salir_boton_pressed():
 	#get_tree().paused = false
 	get_tree().quit()
 
-func _on_Continuar_boton_pressed():
+func _on_Replay_boton_pressed():
 	#get_tree().paused = false
 	get_tree().change_scene_to_file("res://world.tscn")
 
