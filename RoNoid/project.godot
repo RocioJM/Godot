@@ -23,6 +23,8 @@ FileUtils="*res://file_utils.gd"
 
 window/size/viewport_width=288
 window/size/viewport_height=512
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [input]
 
