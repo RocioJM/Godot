@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv1mtlyf78h45"]
+[gd_scene load_steps=8 format=3 uid="uid://bv1mtlyf78h45"]
 
 [ext_resource type="PackedScene" uid="uid://dcvqm2ugyp6vl" path="res://ball.tscn" id="1_hgbq7"]
 [ext_resource type="PackedScene" uid="uid://cpccmvpgyip65" path="res://player.tscn" id="2_gu8ug"]
 [ext_resource type="PackedScene" uid="uid://bsa8wyhom7ttd" path="res://environment.tscn" id="3_qk8eg"]
 [ext_resource type="PackedScene" uid="uid://8urtssw7aqxk" path="res://stage_blocks.tscn" id="5_cadog"]
+[ext_resource type="Texture2D" uid="uid://byg14dniytnaw" path="res://assets/panelSelccionado.png" id="6_eovit"]
 [ext_resource type="AudioStream" uid="uid://bvj7pmj013j77" path="res://assets/sounds/background.ogg" id="6_kqu04"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6pnj"]
@@ -15,17 +16,50 @@ bounce = 1.0
 [node name="Environment" parent="." instance=ExtResource("3_qk8eg")]
 
 [node name="Ball" parent="." instance=ExtResource("1_hgbq7")]
-position = Vector2(144, 450)
+position = Vector2(144, 441)
 physics_material_override = SubResource("PhysicsMaterial_t6pnj")
 gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 
 [node name="Player" parent="." instance=ExtResource("2_gu8ug")]
-position = Vector2(144, 470)
+position = Vector2(144, 461)
 
 [node name="Stage_blocks" parent="." instance=ExtResource("5_cadog")]
 
 [node name="BackdroundSnd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_kqu04")
 autoplay = true
+
+[node name="LeftButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -2.0
+offset_top = 438.0
+offset_right = 142.0
+offset_bottom = 538.0
+texture_normal = ExtResource("6_eovit")
+texture_pressed = ExtResource("6_eovit")
+texture_hover = ExtResource("6_eovit")
+texture_focused = ExtResource("6_eovit")
+
+[node name="RightButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 142.0
+offset_top = 438.0
+offset_right = 286.0
+offset_bottom = 538.0
+texture_normal = ExtResource("6_eovit")
+texture_pressed = ExtResource("6_eovit")
+texture_hover = ExtResource("6_eovit")
+texture_focused = ExtResource("6_eovit")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(2, 5.12)
+texture_normal = ExtResource("6_eovit")
+
+[connection signal="button_down" from="LeftButton" to="Player" method="_on_left_button_button_down"]
+[connection signal="button_up" from="LeftButton" to="Player" method="_on_left_button_button_up"]
+[connection signal="button_down" from="RightButton" to="Player" method="_on_right_button_button_down"]
+[connection signal="button_up" from="RightButton" to="Player" method="_on_right_button_button_up"]
+[connection signal="pressed" from="TouchScreenButton" to="Ball" method="iniciarPartida"]

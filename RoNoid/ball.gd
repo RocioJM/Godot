@@ -38,10 +38,13 @@ func _physics_process(delta):
 		else:
 			hit_snd.play()
 			
-			
-func _input(event):
-	if event.is_action_pressed("iniciar") and game_started:
+func iniciarPartida():
+	if game_started:
 		linear_velocity = Vector2(50,-200)
 		game_started = false
 		start_snd.play()
+
+func _input(event):
+	if event.is_action_pressed("iniciar") :
+		iniciarPartida()
 

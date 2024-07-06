@@ -15,7 +15,3 @@ func _process(delta):
 		NumScore.set_text(str(title.score))
 		NumLevel.set_text(str(title.level))
 
-
-#func _on_boton_guardar_pressed():
-	#FileUtils.save_game(str(NumLevel.get_text()), str(NumScore.get_text()))
-#
