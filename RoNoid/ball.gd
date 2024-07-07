@@ -34,7 +34,9 @@ func _physics_process(delta):
 			get_parent().add_child(replay_scene.instantiate())
 		elif body.name == "Player":
 			title.score +=10
-			linear_velocity = Vector2(50,-200)
+			#linear_velocity = Vector2(50,-200)
+			linear_velocity.y = -200
+			print(linear_velocity)
 		else:
 			hit_snd.play()
 			
