@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7xm1qf7y1hcq"]
+[gd_scene load_steps=7 format=3 uid="uid://b7xm1qf7y1hcq"]
 
 [ext_resource type="Script" path="res://title.gd" id="1_h8wsr"]
 [ext_resource type="Texture2D" uid="uid://dcrqx47oj0c2p" path="res://assets/background.png" id="1_mfsxn"]
 [ext_resource type="PackedScene" uid="uid://cuy0tyn8xvtl2" path="res://main_title.tscn" id="2_ebaxl"]
 [ext_resource type="PackedScene" uid="uid://qycbquyj8tv" path="res://botonStart.tscn" id="3_yqhg1"]
 [ext_resource type="PackedScene" uid="uid://brh1j6prspc4o" path="res://botonSalir.tscn" id="4_e2l4l"]
+[ext_resource type="FontFile" uid="uid://bmg26j5rfiiej" path="res://assets/advanced_pixel-7.ttf" id="6_vp6ge"]
 
 [node name="Title" type="Node2D" groups=["Title"]]
 script = ExtResource("1_h8wsr")
@@ -23,14 +24,79 @@ size_flags_horizontal = 4
 
 [node name="main_title" parent="Menu" instance=ExtResource("2_ebaxl")]
 
-[node name="BotonStart" parent="Menu" instance=ExtResource("3_yqhg1")]
-position = Vector2(64, 120)
+[node name="BotonCargarPartida" parent="Menu" instance=ExtResource("3_yqhg1")]
+position = Vector2(64, 137)
+
+[node name="Label" parent="Menu/BotonCargarPartida/Boton" index="0"]
+visible = false
+text = "Cargar"
+
+[node name="Cargar" type="Label" parent="Menu/BotonCargarPartida/Boton" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_vp6ge")
+theme_override_font_sizes/font_size = 20
+text = "Cargar"
+horizontal_alignment = 1
+
+[node name="Partida" type="Label" parent="Menu/BotonCargarPartida/Boton" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_vp6ge")
+theme_override_font_sizes/font_size = 20
+text = "Partida"
+horizontal_alignment = 1
+
+[node name="Shadow" type="Sprite2D" parent="Menu/BotonCargarPartida"]
+position = Vector2(10, 19)
+
+[node name="ColorRect" type="ColorRect" parent="Menu/BotonCargarPartida/Shadow"]
+offset_right = 78.0
+offset_bottom = 53.0
+color = Color(0.0962047, 0.0962048, 0.0962047, 0.458824)
 
 [node name="BotonSalir" parent="Menu" instance=ExtResource("4_e2l4l")]
 position = Vector2(64, 208)
 
-[connection signal="pressed" from="Menu/BotonStart/Boton" to="." method="_on_start_boton_pressed"]
-[connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salit_boton_pressed"]
+[node name="NuevaPartida" parent="Menu" instance=ExtResource("3_yqhg1")]
+position = Vector2(64, 68)
 
-[editable path="Menu/BotonStart"]
+[node name="Label" parent="Menu/NuevaPartida/Boton" index="0"]
+offset_top = 12.0
+offset_bottom = -3.0
+text = "Nueva"
+vertical_alignment = 0
+
+[node name="Partida" type="Label" parent="Menu/NuevaPartida/Boton" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_vp6ge")
+theme_override_font_sizes/font_size = 20
+text = "Partida"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Menu/BotonCargarPartida/Boton" to="." method="_on_start_boton_pressed"]
+[connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salit_boton_pressed"]
+[connection signal="pressed" from="Menu/NuevaPartida/Boton" to="." method="_on_NuevaPartida_boton_pressed"]
+
+[editable path="Menu/BotonCargarPartida"]
 [editable path="Menu/BotonSalir"]
+[editable path="Menu/NuevaPartida"]

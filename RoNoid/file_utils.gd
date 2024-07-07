@@ -2,16 +2,19 @@ extends Node
 
 var ruta_archivo : String = "res://save_game.dat"
 
+var file
 var level : int = 0
 var score : int = 0
 
 func _ready():
 	var loaded_data : Dictionary
-	var file = FileAccess.open(ruta_archivo,FileAccess.READ)
+	file = FileAccess.open(ruta_archivo,FileAccess.READ)
 	if file:
 		loaded_data = JSON.parse_string(file.get_line())
 		level = int(loaded_data.level)
 		score = int(loaded_data.score)
+	else:
+		file = null
 
 func save_game(level : String, score : String) :
 	var data : Dictionary = {
@@ -25,3 +28,5 @@ func save_game(level : String, score : String) :
 	file.store_line(data_json)
 	print("Guardado Exitoso!")
 
+func loadedData ():
+	return file
