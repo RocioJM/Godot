@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtvvcphi17sa" path="res://assets/Blue Button 2.png" id="6_ynf03"]
 [ext_resource type="Texture2D" uid="uid://f30h075ygv7" path="res://assets/Blue-focus.png" id="7_68p5g"]
 
-[node name="Environment" type="Node2D"]
+[node name="Environment" type="Node2D" groups=["Environment"]]
 script = ExtResource("1_oliqp")
 
 [node name="background" type="TextureRect" parent="."]

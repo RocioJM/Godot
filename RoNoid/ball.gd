@@ -19,6 +19,7 @@ func _physics_process(delta):
 		if body.is_in_group("gr_blocks"):
 			body.queue_free()
 			break_snd.play()
+			title.score +=10
 			if body.get_parent().get_child_count() == 1 : #gana 1
 				title.level += 1
 				title.score +=10
@@ -33,10 +34,9 @@ func _physics_process(delta):
 			var replay_scene = load("res://Replay.tscn")
 			get_parent().add_child(replay_scene.instantiate())
 		elif body.name == "Player":
-			title.score +=10
+			#title.score +=10
 			#linear_velocity = Vector2(50,-200)
 			linear_velocity.y = -200
-			print(linear_velocity)
 		else:
 			hit_snd.play()
 			

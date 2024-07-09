@@ -1,18 +1,20 @@
 extends Node2D
 
 @onready var fileUtils : Node = get_tree().root.get_node("FileUtils")
-#@onready var nuevaPartidaBoton : TextureButton = $Menu/NuevaPartida/Boton
-#@onready var nuevaPartida : Node2D = $Menu/NuevaPartida
 @onready var CargarPartidaButton : TextureButton = $Menu/BotonCargarPartida/Boton
 @onready var CargarPartidaSprite : Sprite2D = $Menu/BotonCargarPartida/Shadow
+@onready var Entorno : Node2D = get_tree().get_first_node_in_group("Environment")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if !fileUtils.loadedData():
+	var load_data : Dictionary = fileUtils.loadedData()
+	if load_data.existe == 0:#No Existe
 		CargarPartidaSprite.show()
 		CargarPartidaButton.disabled = true
 		CargarPartidaSprite.modulate.a8 = 255
-	else:
+	else:#Existe
+		fileUtils.level = load_data.level
+		fileUtils.score = load_data.score
 		CargarPartidaSprite.hide()
 		CargarPartidaButton.disabled = false
 		CargarPartidaSprite.modulate.a8 = 0

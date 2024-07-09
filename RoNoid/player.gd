@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 const right : int = 1
 const left : int = -1
 
-@onready var ball : RigidBody2D = get_tree().get_first_node_in_group("ball")
+#@onready var ball : RigidBody2D = get_tree().get_first_node_in_group("ball")
 @onready var leftButton : TextureButton = $LeftButton
 @onready var rightButton : TextureButton = $RightButton
 
@@ -28,17 +28,7 @@ func _physics_process(delta):
 		var movement : Vector2 = Vector2(-SPEED,0)
 		move_and_collide(movement)
 
-#func _on_left_button_pressed():
-	#var movement : Vector2 = Vector2(-SPEED,0)
-	#move_and_collide(movement)
-#
-#func _on_right_button_pressed():
-	#var movement : Vector2 = Vector2(SPEED,0)
-	#move_and_collide(movement)
-
 func _ready():
-	#leftButton.hide()
-	#rightButton.hide()
 	pass
 
 func _on_right_button_button_down():

@@ -126,6 +126,14 @@ text = "Guardar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Mensaje" type="Label" parent="."]
+offset_top = 24.0
+offset_right = 288.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_3uau4")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Menu/BotonSalir/Boton" to="." method="_on_Salir_boton_pressed"]
 [connection signal="pressed" from="Menu/BotonContinuar/Boton" to="." method="_on_Continuar_boton_pressed"]
 [connection signal="pressed" from="BotonGuardar" to="." method="_on_boton_guardar_pressed"]
