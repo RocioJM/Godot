@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://blj55eeeoit2s"]
+
+[ext_resource type="Script" path="res://inicio.gd" id="1_8smn4"]
+[ext_resource type="Texture2D" uid="uid://b45010m3t81rt" path="res://assets/Fondo.png" id="1_mfq5n"]
+[ext_resource type="Texture2D" uid="uid://dkwe8d7vxqk2i" path="res://assets/Item4.png" id="2_uv8ns"]
+[ext_resource type="FontFile" uid="uid://b12yclvc8njx5" path="res://assets/Pacifico.ttf" id="3_bgirn"]
+[ext_resource type="Texture2D" uid="uid://b26nxlrp37wo3" path="res://assets/Logo.png" id="4_63sex"]
+[ext_resource type="AudioStream" uid="uid://bgmmms400v808" path="res://assets/HiOnichan.mp3" id="5_r7p31"]
+
+[node name="Inicio" type="Node2D"]
+script = ExtResource("1_8smn4")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_mfq5n")
+
+[node name="Lazo" type="TextureRect" parent="."]
+offset_left = 117.0
+offset_top = 117.0
+offset_right = 1555.0
+offset_bottom = 647.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uv8ns")
+
+[node name="Texto" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 140.0
+offset_right = 694.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("3_bgirn")
+theme_override_font_sizes/font_size = 80
+text = "Robox Sound"
+
+[node name="Logo" type="TextureRect" parent="."]
+offset_left = 243.0
+offset_top = 299.0
+offset_right = 705.0
+offset_bottom = 770.0
+texture = ExtResource("4_63sex")
+
+[node name="HiOnichan" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(243, 299)
+stream = ExtResource("5_r7p31")

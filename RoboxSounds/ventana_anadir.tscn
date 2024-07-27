@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhmcme8u8cvx0"]
+
+[ext_resource type="Texture2D" uid="uid://b45010m3t81rt" path="res://assets/Fondo.png" id="1_y5vbs"]
+[ext_resource type="Texture2D" uid="uid://bep4rtx4gvor8" path="res://assets/Icon_ArrowLeft.png" id="2_v1xam"]
+
+[node name="VentanaAnadir" type="Node2D"]
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_y5vbs")
+
+[node name="Atras" type="TextureButton" parent="."]
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 292.0
+offset_bottom = 255.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_v1xam")

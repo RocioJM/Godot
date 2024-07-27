@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=3 uid="uid://ol3k4bvnwpjl"]
+
+[ext_resource type="Script" path="res://entorno.gd" id="1_i88a7"]
+[ext_resource type="Texture2D" uid="uid://b45010m3t81rt" path="res://assets/Fondo.png" id="1_ymyor"]
+[ext_resource type="Texture2D" uid="uid://dkwe8d7vxqk2i" path="res://assets/Item4.png" id="2_bffeu"]
+[ext_resource type="FontFile" uid="uid://b12yclvc8njx5" path="res://assets/Pacifico.ttf" id="3_rdmny"]
+[ext_resource type="Texture2D" uid="uid://gjrcw5isqcu" path="res://assets/Icon_Exit.png" id="4_c30uc"]
+[ext_resource type="Texture2D" uid="uid://by22jenspaiuc" path="res://assets/Icon_Add.png" id="6_8kjoo"]
+[ext_resource type="Texture2D" uid="uid://cxob42extqi42" path="res://assets/cuadrado.png" id="7_2oxqw"]
+[ext_resource type="Texture2D" uid="uid://cya23xynvo6b" path="res://assets/Icon_SoundOff.png" id="8_daqby"]
+[ext_resource type="Texture2D" uid="uid://bdw3igrsienn5" path="res://assets/Icon_SoundOff_Disabled.png" id="9_npmml"]
+[ext_resource type="Texture2D" uid="uid://bwuvocqogemcw" path="res://assets/Icon_SoundOn.png" id="10_4leyk"]
+[ext_resource type="Texture2D" uid="uid://bjq8l7hpwdn8c" path="res://assets/Icon_SoundOn_Disabled.png" id="11_r2b2q"]
+[ext_resource type="Texture2D" uid="uid://bep4rtx4gvor8" path="res://assets/Icon_ArrowLeft.png" id="12_ck52n"]
+[ext_resource type="Texture2D" uid="uid://cl0kjak5aokiq" path="res://assets/Icon_ArrowLeft_Disabled.png" id="13_cq5gq"]
+[ext_resource type="Texture2D" uid="uid://b31ma3udja5is" path="res://assets/Icon_ArrowRight.png" id="14_1fw1g"]
+[ext_resource type="Texture2D" uid="uid://c61f5v2vkaaus" path="res://assets/Icon_ArrowRight_Disabled.png" id="15_kvy3p"]
+
+[node name="Entorno" type="Node2D"]
+script = ExtResource("1_i88a7")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ymyor")
+
+[node name="Lazo" type="TextureRect" parent="."]
+offset_left = 278.0
+offset_top = 59.0
+offset_right = 1716.0
+offset_bottom = 589.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bffeu")
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 71.0
+offset_right = 576.0
+offset_bottom = 143.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_rdmny")
+theme_override_font_sizes/font_size = 40
+text = "Robox Sounds"
+
+[node name="BotonSalir" type="TextureButton" parent="."]
+offset_left = 776.0
+offset_top = 61.0
+offset_right = 956.0
+offset_bottom = 304.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_c30uc")
+
+[node name="Añadir" type="TextureButton" parent="."]
+offset_left = 65.0
+offset_top = 64.0
+offset_right = 295.0
+offset_bottom = 295.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_8kjoo")
+texture_pressed = ExtResource("6_8kjoo")
+texture_hover = ExtResource("6_8kjoo")
+texture_focused = ExtResource("6_8kjoo")
+
+[node name="BotonSonido1" type="TextureRect" parent="."]
+offset_left = 33.0
+offset_top = 166.0
+offset_right = 5033.0
+offset_bottom = 5166.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido2" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 5320.0
+offset_bottom = 5168.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido3" type="TextureRect" parent="."]
+offset_left = 608.0
+offset_top = 176.0
+offset_right = 5608.0
+offset_bottom = 5176.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido4" type="TextureRect" parent="."]
+offset_left = 33.0
+offset_top = 321.0
+offset_right = 5033.0
+offset_bottom = 5321.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido5" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 320.0
+offset_right = 5320.0
+offset_bottom = 5320.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido6" type="TextureRect" parent="."]
+offset_left = 616.0
+offset_top = 320.0
+offset_right = 5616.0
+offset_bottom = 5320.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido7" type="TextureRect" parent="."]
+offset_left = 33.0
+offset_top = 479.0
+offset_right = 5033.0
+offset_bottom = 5479.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido8" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 478.0
+offset_right = 5320.0
+offset_bottom = 5478.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="BotonSonido9" type="TextureRect" parent="."]
+offset_left = 616.0
+offset_top = 478.0
+offset_right = 5616.0
+offset_bottom = 5478.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_2oxqw")
+
+[node name="SoundOff" type="TextureButton" parent="."]
+offset_left = 56.0
+offset_top = 705.0
+offset_right = 265.0
+offset_bottom = 911.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("8_daqby")
+texture_disabled = ExtResource("9_npmml")
+
+[node name="SoundOn" type="TextureButton" parent="."]
+offset_left = 140.0
+offset_top = 707.0
+offset_right = 335.0
+offset_bottom = 913.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("10_4leyk")
+texture_disabled = ExtResource("11_r2b2q")
+
+[node name="FlechaIzquierda" type="TextureButton" parent="."]
+offset_left = 352.0
+offset_top = 705.0
+offset_right = 580.0
+offset_bottom = 911.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("12_ck52n")
+texture_disabled = ExtResource("13_cq5gq")
+
+[node name="FlechaDerecha" type="TextureButton" parent="."]
+offset_left = 503.0
+offset_top = 707.0
+offset_right = 731.0
+offset_bottom = 913.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("14_1fw1g")
+texture_disabled = ExtResource("15_kvy3p")
+
+[node name="FDLoad" type="FileDialog" parent="."]
+title = "Carga un sonido"
+initial_position = 1
+size = Vector2i(500, 500)
+ok_button_text = "Abrir"
+file_mode = 0
+access = 2
+
+[connection signal="pressed" from="BotonSalir" to="." method="_on_boton_salir_entorno_pressed"]
+[connection signal="pressed" from="Añadir" to="." method="_on_añadir_pressed"]
+[connection signal="file_selected" from="FDLoad" to="." method="_on_fd_load_file_selected"]

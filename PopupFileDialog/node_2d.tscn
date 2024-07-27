@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://wdnrj5cnkp2j"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_tetr2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tetr2")
+
+[node name="fd_save" type="FileDialog" parent="."]
+initial_position = 1
+size = Vector2i(500, 500)
+access = 2
+
+[node name="fd_load" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(500, 500)
+ok_button_text = "Abrir"
+file_mode = 0
+access = 2
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 180.0
+offset_top = 66.0
+offset_right = 253.0
+offset_bottom = 97.0
+text = "Guardar"
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 316.0
+offset_top = 63.0
+offset_right = 362.0
+offset_bottom = 94.0
+text = "Load"
+
+[connection signal="file_selected" from="fd_save" to="." method="_on_fd_save_file_selected"]
+[connection signal="file_selected" from="fd_load" to="." method="_on_fd_load_file_selected"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
