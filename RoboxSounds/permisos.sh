@@ -1,0 +1,1 @@
+chmod +x res://convert_to_ogg.sh
