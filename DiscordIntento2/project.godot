@@ -1,0 +1,180 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ApplicationCommand",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/application_command.gd"
+}, {
+"base": "Reference",
+"class": "BitField",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/bit_field.gd"
+}, {
+"base": "HTTPRequest",
+"class": "DiscordBot",
+"language": "GDScript",
+"path": "res://addons/discord_gd/discord.gd"
+}, {
+"base": "Reference",
+"class": "DiscordInteraction",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/discord_interaction.gd"
+}, {
+"base": "Node",
+"class": "DiscordRPC",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/DiscordRPC.gd"
+}, {
+"base": "Reference",
+"class": "DiscordRPCEnum",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/DiscordRPCEnum.gd"
+}, {
+"base": "Reference",
+"class": "DiscordRPCUtil",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/RPC.gd"
+}, {
+"base": "Reference",
+"class": "Embed",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/embed.gd"
+}, {
+"base": "Reference",
+"class": "Guild",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/guild.gd"
+}, {
+"base": "Reference",
+"class": "Helpers",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/helpers.gd"
+}, {
+"base": "Reference",
+"class": "IPCUtil",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/IPCUtil.gd"
+}, {
+"base": "Reference",
+"class": "Message",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/message.gd"
+}, {
+"base": "Reference",
+"class": "MessageActionRow",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/message_action_row.gd"
+}, {
+"base": "Reference",
+"class": "MessageButton",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/message_button.gd"
+}, {
+"base": "BitField",
+"class": "MessageFlags",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/message_flags.gd"
+}, {
+"base": "BitField",
+"class": "Permissions",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/permissions.gd"
+}, {
+"base": "Reference",
+"class": "RichPresence",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresence.gd"
+}, {
+"base": "Reference",
+"class": "RichPresenceButton",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresenceButton.gd"
+}, {
+"base": "",
+"class": "RichPresenceModule",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPreseneModule.gd"
+}, {
+"base": "Reference",
+"class": "SelectMenu",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/select_menu.gd"
+}, {
+"base": "",
+"class": "StreamPeerUnix",
+"language": "NativeScript",
+"path": "res://addons/godot-unix-socket/unix-socket.gdns"
+}, {
+"base": "Reference",
+"class": "URLUtil",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/URLUtil.gd"
+}, {
+"base": "Reference",
+"class": "UUID",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/UUID.gd"
+}, {
+"base": "",
+"class": "UpdateRichPresencePayload",
+"language": "GDScript",
+"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/UpdateRichPresencePayload.gd"
+}, {
+"base": "Reference",
+"class": "User",
+"language": "GDScript",
+"path": "res://addons/discord_gd/classes/user.gd"
+} ]
+_global_script_class_icons={
+"ApplicationCommand": "",
+"BitField": "",
+"DiscordBot": "",
+"DiscordInteraction": "",
+"DiscordRPC": "",
+"DiscordRPCEnum": "",
+"DiscordRPCUtil": "",
+"Embed": "",
+"Guild": "",
+"Helpers": "",
+"IPCUtil": "",
+"Message": "",
+"MessageActionRow": "",
+"MessageButton": "",
+"MessageFlags": "",
+"Permissions": "",
+"RichPresence": "",
+"RichPresenceButton": "",
+"RichPresenceModule": "",
+"SelectMenu": "",
+"StreamPeerUnix": "",
+"URLUtil": "",
+"UUID": "",
+"UpdateRichPresencePayload": "",
+"User": ""
+}
+
+[application]
+
+config/name="Discord Intento 2"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
