@@ -1,0 +1,12 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1731829833
+default_env.tres::Environment::5609148793185304136::1723276149::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1723276193::0::1::::<><>::
+Felicidades.gd::GDScript::-1::1723224709::0::1::::<>Node2D<>::
+Felicidades.tscn::PackedScene::5676194500823316047::1723276149::0::1::::<><>::res://Felicidades.gd<>uid://bfquf3cm4iwf1::::res://assets/fondo2.jpg<>uid://oy6mc3xshjqk::::res://assets/Loading.png<>uid://di0uspdwojsap::::res://assets/papis.jpg<>uid://b6q4xbqtknec2::::res://assets/sndFondo.mp3
+icon.png::CompressedTexture2D::2922681122638606899::1723219114::1723220147::1::::<><>::
+::res://assets/::1723224866
+fondo2.jpg::CompressedTexture2D::2771619689100804908::1723220285::1723220287::1::::<><>::
+Loading.png::CompressedTexture2D::1034092682703085958::1723219565::1723220147::1::::<><>::
+papis.jpg::CompressedTexture2D::7773629521684002047::1723224856::1723224866::1::::<><>::
+sndFondo.mp3::AudioStreamMP3::4597106824704474327::1723224558::1723224601::1::::<><>::
